@@ -1,16 +1,38 @@
-# React + Vite
+# React Render Lists Practice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project demonstrates how to render lists in React using the `map()` method and reusable components.
 
-Currently, two official plugins are available:
+## What I Learned
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Rendering Lists with map()
+- Used the JavaScript `map()` method to transform arrays of data into JSX elements
+- Each list item needs a unique `key` prop (using the item's `id`)
+- The `map()` method iterates over each item and returns a `<li>` element
 
-## React Compiler
+### 2. Creating Reusable List Components
+- Built a `List` component that accepts `items` and `category` as props
+- The component can be reused for different types of lists (fruits, vegetables, etc.)
+- Demonstrated conditional rendering using `&&` operator to show lists only when they have items
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 3. Working with Array Data
+The project uses arrays of objects with the following structure:
+```javascript
+{id: 1, name: "apple", calories: 95}
+```
 
-## Expanding the ESLint configuration
+### 4. Array Methods (Explored)
+In the `List.jsx` component, I explored various array methods:
+- **Sorting**: `sort()` for alphabetical and numeric sorting
+- **Filtering**: `filter()` to create subsets based on conditions (e.g., low/high calorie items)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+
+- `App.jsx`: Defines the data arrays (fruits and vegetables) and passes them to the List component
+- `List.jsx`: Reusable component that renders a list with a category heading
+
+## Key Concepts
+
+- **Props**: Passing data from parent to child components
+- **Keys**: Unique identifiers for list items (required by React)
+- **Conditional Rendering**: Only displaying lists when they contain items
+- **Component Reusability**: Using the same List component for different data sets
